@@ -1,0 +1,9 @@
+builders:
+  generators:
+    target: ":generators"
+    import: "package:generators/generators.dart"
+    builder_factories: ["generateJsonClass"] #Builder name(BuilderOptions)
+    build_extensions: { ".dart": ["json_generators.g.part"] }
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen|combining_builder"]
